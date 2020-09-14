@@ -6,31 +6,25 @@ import math
 
 
 def average(a: float, b: float, c: float) -> float:
-    Moyenne = (a+b+c)/3
-    return Moyenne
+    return (a+b+c)/3
 
 
 def to_radians(angle_degs: float, angle_mins: float, angle_secs: float) -> float:
-    angle_mins_radian = angle_mins / 60
-    angle_secs_radian = angle_secs /(60*60)
-    angle_total = angle_degs + angle_mins_radian + angle_secs_radian
-    angle_radian = (angle_degs*math.pi)/180
-    return angle_radian 
+    return (angle_degs +(angle_mins+angle_secs/60)/60)*math.pi/180
 
 
 def to_degrees(angle_rads: float) -> tuple:
-    
-    return 0.0, 0.0, 0.0
+    angle_deg_total = angle_rads*180/math.pi
+    angle_deg, angle_min, angle_sec = math.floor(angle_deg_total), angle_deg_total//60, angle_deg_total//60**2
+    return angle_deg, angle_min, angle_sec
 
 
 def to_celsius(temperature: float) -> float:
-    temperature_celcius = (temperature/1.8)+32
-    return 0.0
+    return (temperature/1.8)+32
 
 
 def to_farenheit(temperature: float) -> float:
-
-    return (temperature*1.8)  - 32 
+    return (temperature-32 )*1.8 
 
 def main() -> None:
     print(f"Moyenne des nombres 2, 4, 6: {average(2.1, 4.3, 6.5)}")
