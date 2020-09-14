@@ -24,13 +24,13 @@ def to_degrees(angle_rads: float) -> tuple:
 
 
 def to_celsius(temperature: float) -> float:
-    temperature_celcius = temperature - 32 *1.8
+    temperature_celcius = (temperature - 32) *1.8
     return 0.0
 
 
 def to_farenheit(temperature: float) -> float:
 
-    return temperature/1.8  + 32 
+    return (temperature/1.8)  + 32 
 
 def main() -> None:
     print(f"Moyenne des nombres 2, 4, 6: {average(2.1, 4.3, 6.5)}")
